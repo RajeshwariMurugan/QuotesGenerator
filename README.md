@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/89f7f7c2-dc49-4775-8041-3810cf99de99)# QuotesGenerator
+# QuotesGenerator
 ## Overview
 The Quotes Generator is a simple web application that allows users to enter their name and receive a random motivational quote. This application is developed using HTML, CSS, JavaScript, Java, and Servlets, and is deployed on an Apache Tomcat server. It demonstrates the integration of front-end and back-end technologies to provide an interactive and personalized user experience.
 
