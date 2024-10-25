@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Result</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        blockquote {
+            font-size: 1.2em;
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        footer {
+            color: #777;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #1c92d2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #167bb6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello, <span id="userName"></span>!</h1>
+        <p>Here's a quote for you:</p>
+        <blockquote id="quoteText">"Quote will be here"</blockquote>
+        <footer id="quoteAuthor">- Author</footer>
+        <br><br>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+  <script>
+    // Populate the quote and user data from query parameters
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return decodeURIComponent(urlParams.get(param)); // Decode the query param
+    }
+
+    // Set user name and quote dynamically
+    document.getElementById("userName").innerText = getQueryParam("name");
+    document.getElementById("quoteText").innerText = getQueryParam("quote");
+    document.getElementById("quoteAuthor").innerText = "- " + getQueryParam("author");
+
+    // Function to go back to the index page
+    function goBack() {
+        window.location.href = 'index.html';
+    }
+</script>
+
+</body>
+</html>
